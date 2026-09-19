@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لروي الجيلالي | Laroui El-Djilalli — Developer</title>
+<meta name="description" content="بورتفوليو لروي الجيلالي — مطور تطبيقات موبايل وديسكتوب (Flutter, WPF, Supabase)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="#top" class="brand">لروي<span class="brand-dot">.</span></a>
+    <nav class="nav" id="mainNav">
+      <a href="#about" data-i18n="nav.about">نبذة</a>
+      <a href="#skills" data-i18n="nav.skills">المهارات</a>
+      <a href="#projects" data-i18n="nav.projects">المشاريع</a>
+      <a href="#contact" data-i18n="nav.contact">تواصل</a>
+    </nav>
+    <div class="topbar-actions">
+      <div class="lang-toggle-container" title="AR / EN">
+        <input type="checkbox" id="langToggle" class="lang-toggle-input" aria-label="Switch language / تبديل اللغة">
+        <svg class="lang-toggle-svg" viewBox="0 0 292 142" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect class="lang-toggle-background" x="2" y="2" width="288" height="138" rx="69"></rect>
+          <g class="lang-toggle-circle-center">
+            <circle class="lang-toggle-thumb" cx="71" cy="71" r="59"></circle>
+          </g>
+          <text class="lang-toggle-icon on" x="71" y="93" text-anchor="middle" font-size="52" font-weight="700">ع</text>
+          <text class="lang-toggle-icon off" x="221" y="83" text-anchor="middle" font-size="32" font-weight="700">EN</text>
+        </svg>
+      </div>
+      <button id="themeToggle" class="glass-toggle" aria-label="تبديل الوضع الداكن/الفاتح" title="تبديل الوضع">
+        <span class="glass-toggle-orb"></span>
+        <span class="glass-toggle-glass">
+          <span class="glass-toggle-sweep"></span>
+          <span class="glass-toggle-icon">
+            <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2M12 19.5v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2.5 12h2M19.5 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </span>
+        </span>
+      </button>
+      <button id="navToggle" class="icon-btn nav-toggle" aria-label="فتح القائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero container">
+    <div class="hero-text">
+      <span class="eyebrow" data-i18n="hero.eyebrow">مطوّر تطبيقات موبايل وديسكتوب</span>
+      <h1><span class="hero-ar">لروي الجيلالي</span><span class="hero-en">Laroui El-Djilalli</span></h1>
+      <p class="hero-sub" data-i18n="hero.sub">
+        طالب ماستر 1 علوم الحاسوب بجامعة أحمد دراية &mdash; أدرار، الجزائر.
+        أبني تطبيقات موبايل بـ Flutter وتطبيقات سطح المكتب بـ WPF، وأدير خدمات نشر التطبيقات والتجارة الرقمية.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary" data-i18n="hero.cta.projects">شاهد المشاريع</a>
+        <a href="#contact" class="btn-sparkle">
+          <span class="dots_border"></span>
+          <svg class="sparkle-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="path" fill="currentColor" d="M14.187 8.096L15 5.25L15.813 8.096C16.0231 8.83114 16.4171 9.50062 16.9577 10.0413C17.4984 10.5819 18.1679 10.9759 18.903 11.186L21.75 12L18.903 12.813C18.1679 13.0231 17.4984 13.4171 16.9577 13.9577C16.4171 14.4984 16.0231 15.1679 15.813 15.903L15 18.75L14.187 15.903C13.9769 15.1679 13.5829 14.4984 13.0423 13.9577C12.5016 13.4171 11.8321 13.0231 11.097 12.813L8.25 12L11.097 11.186C11.8321 10.9759 12.5016 10.5819 13.0423 10.0413C13.5829 9.50062 13.9769 8.83114 14.187 8.096Z"></path>
+            <path class="path" fill="currentColor" d="M6 14.25L5.741 15.285C5.59267 15.8785 5.28579 16.4206 4.85319 16.8532C4.42059 17.2858 3.87853 17.5927 3.285 17.741L2.25 18L3.285 18.259C3.87853 18.4073 4.42059 18.7142 4.85319 19.1468C5.28579 19.5794 5.59267 20.1215 5.741 20.715L6 21.75L6.259 20.715C6.40725 20.1216 6.71398 19.5796 7.14639 19.147C7.5788 18.7144 8.12065 18.4075 8.714 18.259L9.75 18L8.714 17.741C8.12065 17.5925 7.5788 17.2856 7.14639 16.853C6.71398 16.4204 6.40725 15.8784 6.259 15.285L6 14.25Z"></path>
+            <path class="path" fill="currentColor" d="M6.5 4L6.303 4.5915C6.24777 4.75718 6.15472 4.90774 6.03123 5.03123C5.90774 5.15472 5.75718 5.24777 5.5915 5.303L5 5.5L5.5915 5.697C5.75718 5.75223 5.90774 5.84528 6.03123 5.96877C6.15472 6.09226 6.24777 6.24282 6.303 6.4085L6.5 7L6.697 6.4085C6.75223 6.24282 6.84528 6.09226 6.96877 5.96877C7.09226 5.84528 7.24282 5.75223 7.4085 5.697L8 5.5L7.4085 5.303C7.24282 5.24777 7.09226 5.15472 6.96877 5.03123C6.84528 4.90774 6.75223 4.75718 6.697 4.5915L6.5 4Z"></path>
+          </svg>
+          <span class="text_button" data-i18n="hero.cta.contact">تواصل معي</span>
+        </a>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-chip location-trigger">
+          <span data-i18n="hero.meta.location">📍 أدرار، الجزائر</span>
+          <div class="location-card">
+            <div class="location-card-inner">
+              <span class="location-cloud"></span>
+              <span class="location-cloud"></span>
+              <span class="location-cloud"></span>
+              <span class="location-pin"></span>
+              <div class="location-card-text">
+                <div class="location-card-title" data-i18n="hero.location.title">أدرار</div>
+                <div class="location-card-sub" data-i18n="hero.location.sub">الجزائر 🇩🇿</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="meta-chip" data-i18n="hero.meta.education">🎓 ماستر 1 &mdash; علوم الحاسوب</div>
+        <div class="meta-chip" data-i18n="hero.meta.age">🕑 20 سنة</div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="orbit-card card-1">
+        <span class="tag tag-mobile">Flutter</span>
+      </div>
+      <div class="orbit-card card-2">
+        <span class="tag tag-desktop">WPF · .NET</span>
+      </div>
+      <div class="orbit-card card-3">
+        <span class="tag tag-services">Supabase</span>
+      </div>
+      <div class="hero-glow"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section container">
+    <h2 class="section-title"><span class="title-num">01</span> <span data-i18n="about.sectionTitle">نبذة عني</span></h2>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3 data-i18n="about.education.title">التعليم</h3>
+        <ul class="about-list">
+          <li><strong data-i18n="about.education.uni">جامعة أحمد دراية &mdash; أدرار</strong></li>
+          <li data-i18n="about.education.degree1">ماستر 1، علوم الحاسوب (حاليًا)</li>
+          <li data-i18n="about.education.degree2">ليسانس، علوم الحاسوب &mdash; نفس الجامعة</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h3 data-i18n="about.whatIdo.title">ما أقوم به</h3>
+        <p data-i18n="about.whatIdo.body">
+          أطوّر تطبيقات موبايل كاملة باستخدام Flutter و Supabase، وأنظمة سطح مكتب احترافية بـ WPF و .NET 10
+          تشمل أنظمة ترخيص (Licensing) مخصصة. أدير أيضًا خدمة نشر التطبيقات على المتاجر ومتجرًا رقميًا عبر إنستغرام.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section container">
+    <h2 class="section-title"><span class="title-num">02</span> <span data-i18n="skills.sectionTitle">المهارات</span></h2>
+    <p class="skills-hint" data-i18n="skills.hint">مرر الفأرة فوق البطاقة لرؤية التفاصيل</p>
+    <div class="skills-grid">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front skill-face" style="--face-accent: var(--accent-mobile)">
+            <div class="skill-icon">📱</div>
+            <h3 data-i18n="skills.mobile.title">الموبايل والويب</h3>
+          </div>
+          <div class="flip-card-back skill-face" style="--face-accent: var(--accent-mobile)">
+            <div class="skill-tags">
+              <span>Flutter</span><span>Dart</span><span>Supabase</span><span>Firebase</span><span>PHP</span><span>SQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front skill-face" style="--face-accent: var(--accent-desktop)">
+            <div class="skill-icon">🖥️</div>
+            <h3 data-i18n="skills.desktop.title">سطح المكتب</h3>
+          </div>
+          <div class="flip-card-back skill-face" style="--face-accent: var(--accent-desktop)">
+            <div class="skill-tags">
+              <span>WPF</span><span>.NET 10</span><span>C#</span><span>KeyGen / Licensing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front skill-face" style="--face-accent: var(--accent-services)">
+            <div class="skill-icon">🚀</div>
+            <h3 data-i18n="skills.services.title">الأعمال والأدوات</h3>
+          </div>
+          <div class="flip-card-back skill-face" style="--face-accent: var(--accent-services)">
+            <div class="skill-tags">
+              <span>Play Store Publishing</span><span>App Store Publishing</span><span>Meta Ads</span><span>Instagram Marketing</span><span>Git</span><span>VS Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section container">
+    <h2 class="section-title"><span class="title-num">03</span> <span data-i18n="projects.sectionTitle">المشاريع</span></h2>
+
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="mobile" role="tab" aria-selected="true" data-i18n="tabs.mobile">📱 تطبيقات الموبايل</button>
+      <button class="tab-btn" data-tab="desktop" role="tab" aria-selected="false" data-i18n="tabs.desktop">🖥️ تطبيقات سطح المكتب</button>
+      <button class="tab-btn" data-tab="services" role="tab" aria-selected="false" data-i18n="tabs.services">🚀 الخدمات</button>
+    </div>
+
+    <!-- Mobile panel -->
+    <div class="tab-panel active" id="panel-mobile" role="tabpanel">
+      <div class="cards-grid" id="grid-mobile" data-category="mobile">
+<div class="tower-loader-wrap"><div class="tower-loader"><div class="tower-box tower-box-1"><div class="tower-side-left"></div><div class="tower-side-right"></div><div class="tower-side-top"></div></div><div class="tower-box tower-box-2"><div class="tower-side-left"></div><div class="tower-side-right"></div><div class="tower-side-top"></div></div><div class="tower-box tower-box-3"><div class="tower-side-left"></div><div class="tower-side-right"></div><div class="tower-side-top"></div></div><div class="tower-box tower-box-4"><div class="tower-side-left"></div><div class="tower-side-right"></div><div class="tower-side-top"></div></div></div></div>
+      </div>
+    </div>
+
+    <!-- Desktop panel -->
+    <div class="tab-panel" id="panel-desktop" role="tabpanel">
+      <div class="cards-grid" id="grid-desktop" data-category="desktop">
+<div class="tower-loader-wrap"><div class="tower-loader"><div class="tower-box tower-box-1"><div class="tower-side-left"></div><div class="tower-side-right"></div><div class="tower-side-top"></div></div><div class="tower-box tower-box-2"><div class="tower-side-left"></div><div class="tower-side-right"></div><div class="tower-side-top"></div></div><div class="tower-box tower-box-3"><div class="tower-side-left"></div><div class="tower-side-right"></div><div class="tower-side-top"></div></div><div class="tower-box tower-box-4"><div class="tower-side-left"></div><div class="tower-side-right"></div><div class="tower-side-top"></div></div></div></div>
+      </div>
+    </div>
+
+    <!-- Services panel -->
+    <div class="tab-panel" id="panel-services" role="tabpanel">
+      <div class="cards-grid" id="grid-services" data-category="services">
+<div class="tower-loader-wrap"><div class="tower-loader"><div class="tower-box tower-box-1"><div class="tower-side-left"></div><div class="tower-side-right"></div><div class="tower-side-top"></div></div><div class="tower-box tower-box-2"><div class="tower-side-left"></div><div class="tower-side-right"></div><div class="tower-side-top"></div></div><div class="tower-box tower-box-3"><div class="tower-side-left"></div><div class="tower-side-right"></div><div class="tower-side-top"></div></div><div class="tower-box tower-box-4"><div class="tower-side-left"></div><div class="tower-side-right"></div><div class="tower-side-top"></div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section container">
+    <h2 class="section-title"><span class="title-num">04</span> <span data-i18n="contact.sectionTitle">تواصل معي</span></h2>
+    <div class="contact-card">
+      <div class="contact-avatar">
+        <img src="assets/profile.jpg" alt="لروي الجيلالي">
+      </div>
+      <p class="contact-lead" data-i18n="contact.lead">هل لديك مشروع أو فكرة؟ يسعدني التعاون معك.</p>
+
+      <div class="contact-links">
+        <button type="button" class="contact-link contact-copy" id="copyEmailBtn" data-copy-value="djilalilar2020@gmail.com">
+          <span class="contact-ico">✉️</span>
+          <span class="contact-copy-text">djilalilar2020@gmail.com</span>
+        </button>
+        <a class="contact-link" href="https://wa.me/213669120648" target="_blank" rel="noopener">
+          <span class="contact-ico">💬</span> <span class="ltr-text">+213 669 120 648</span>
+        </a>
+        <a class="contact-link" href="https://instagram.com/ecomsahla.1" target="_blank" rel="noopener">
+          <span class="contact-ico">📷</span> @ecomsahla.1
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="عرض الصورة">
+  <button type="button" class="lightbox-close" id="lightboxClose" data-i18n-label="lightbox.close" aria-label="إغلاق">✕</button>
+  <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" data-i18n-label="lightbox.prev" aria-label="الصورة السابقة">‹</button>
+  <img id="lightboxImg" class="lightbox-img" alt="">
+  <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" data-i18n-label="lightbox.next" aria-label="الصورة التالية">›</button>
+  <span id="lightboxCounter" class="lightbox-counter"></span>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> لروي الجيلالي — Laroui El-Djilalli</span>
+    <span class="footer-sep">·</span>
+    <span data-i18n="footer.tagline">مصمم ومطوّر بشغف من أدرار، الجزائر 🇩🇿</span>
+    <span class="footer-sep">·</span>
+    <a href="admin.html" class="footer-admin-link" data-i18n="footer.admin">لوحة التحكم</a>
+  </div>
+</footer>
+
+<script type="module" src="js/script.js"></script>
+</body>
+</html>

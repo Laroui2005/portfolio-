@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>لوحة التحكم | لروي الجيلالي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+</div>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="index.html" class="brand">لروي<span class="brand-dot">.</span> <span class="admin-tag">أدمن</span></a>
+    <div class="topbar-actions">
+      <button id="themeToggle" class="icon-btn" aria-label="تبديل الوضع الداكن/الفاتح" title="تبديل الوضع">
+        <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2M12 19.5v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2.5 12h2M19.5 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+      <button id="logoutBtn" class="btn btn-ghost btn-small hidden">تسجيل الخروج</button>
+    </div>
+  </div>
+</header>
+
+<main class="container admin-main">
+
+  <!-- LOGIN -->
+  <section id="loginSection" class="admin-panel login-panel">
+    <h1>تسجيل الدخول</h1>
+    <p class="panel-sub">هذه الصفحة خاصة بك فقط لإدارة مشاريع البورتفوليو.</p>
+    <form id="loginForm" class="admin-form">
+      <label>
+        البريد الإلكتروني
+        <input type="email" id="loginEmail" required autocomplete="email">
+      </label>
+      <label>
+        كلمة المرور
+        <input type="password" id="loginPassword" required autocomplete="current-password">
+      </label>
+      <button type="submit" class="btn btn-primary">دخول</button>
+      <p id="loginError" class="form-error" role="alert"></p>
+    </form>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section id="dashboardSection" class="hidden">
+
+    <section class="admin-panel">
+      <h1 id="formTitle">إضافة مشروع جديد</h1>
+      <form id="projectForm" class="admin-form">
+        <input type="hidden" id="projectId">
+
+        <div class="form-row">
+          <label>
+            التصنيف
+            <select id="fCategory" required>
+              <option value="mobile">📱 موبايل</option>
+              <option value="desktop">🖥️ سطح المكتب</option>
+              <option value="services">🚀 خدمات</option>
+            </select>
+          </label>
+          <label>
+            الترتيب (رقم أصغر = أول)
+            <input type="number" id="fSortOrder" value="0">
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            الاسم (إنجليزي)
+            <input type="text" id="fTitle" required placeholder="Kada">
+          </label>
+          <label>
+            الاسم (عربي، اختياري)
+            <input type="text" id="fTitleAr" placeholder="سجل الشراكة">
+          </label>
+        </div>
+
+        <label>
+          الوصف
+          <textarea id="fDescription" rows="3" required></textarea>
+        </label>
+
+        <div class="form-row">
+          <label>
+            صور / لقطات شاشة (يمكن اختيار عدة صور دفعة واحدة)
+            <input type="file" id="fImageFiles" accept="image/*" multiple>
+          </label>
+          <label>
+            أيقونة إيموجي (للخدمات بدون صور)
+            <input type="text" id="fIcon" maxlength="4" placeholder="🚀">
+          </label>
+        </div>
+        <div id="imageGallery" class="image-gallery hidden"></div>
+
+        <div class="form-row">
+          <label>
+            الوسوم (افصل بفاصلة)
+            <input type="text" id="fTags" placeholder="Flutter, Supabase">
+          </label>
+          <label>
+            شارة (مثال: Play Store ✅) — اختياري
+            <input type="text" id="fBadge" placeholder="Play Store ✅">
+          </label>
+        </div>
+
+        <label>
+          رابط خارجي (اختياري)
+          <input type="url" id="fLinkUrl" placeholder="https://...">
+        </label>
+
+        <label class="checkbox-row">
+          <input type="checkbox" id="fPublished" checked>
+          منشور (يظهر في الموقع العام)
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="saveBtn">حفظ المشروع</button>
+          <button type="button" class="btn btn-ghost hidden" id="cancelEditBtn">إلغاء التعديل</button>
+        </div>
+        <p id="formMessage" class="form-message" role="status"></p>
+      </form>
+    </section>
+
+    <section class="admin-panel">
+      <h2>المشاريع الحالية</h2>
+      <div id="projectsList" class="admin-list">
+        <p class="grid-status">جارِ التحميل…</p>
+      </div>
+    </section>
+
+  </section>
+
+</main>
+
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>
