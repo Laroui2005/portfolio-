@@ -7,7 +7,7 @@ function applyTheme(theme) {
   if (theme === 'dark' || theme === 'light') root.setAttribute('data-theme', theme);
   else root.removeAttribute('data-theme');
 }
-try { applyTheme(localStorage.getItem('theme')); } catch { /* ignore */ }
+try { applyTheme(localStorage.getItem('theme') || 'dark'); } catch { applyTheme('dark'); }
 themeToggle.addEventListener('click', () => {
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const current = root.getAttribute('data-theme') || (prefersDark ? 'dark' : 'light');

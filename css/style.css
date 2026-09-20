@@ -106,8 +106,18 @@ p { margin: 0; color: var(--text-dim); }
 .brand { font-family: var(--font-en); font-weight: 700; font-size: 1.25rem; color: var(--text); text-decoration: none; }
 .brand-dot { color: var(--accent-primary); }
 .nav { display: flex; gap: 28px; }
-.nav a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
-.nav a:hover { color: var(--text); }
+.nav a {
+  position: relative; color: var(--text-dim); text-decoration: none; font-weight: 600;
+  font-size: 0.95rem; padding-bottom: 3px; transition: color 0.2s ease;
+}
+.nav a::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
+  border-radius: 2px; background: var(--accent-primary);
+  transform: scaleX(0); transform-origin: center; transition: transform 0.28s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.nav a:hover, .nav a:focus-visible { color: var(--text); }
+.nav a:hover::after, .nav a:focus-visible::after { transform: scaleX(1); }
+.nav a:active { color: var(--accent-primary); }
 .topbar-actions { display: flex; align-items: center; gap: 8px; }
 
 .icon-btn {
@@ -122,8 +132,17 @@ p { margin: 0; color: var(--text-dim); }
 :root[data-theme="dark"] .icon-sun { display: none; }
 :root[data-theme="dark"] .icon-moon { display: block; }
 
-.nav-toggle { display: none; flex-direction: column; gap: 4px; }
-.nav-toggle span { width: 18px; height: 2px; background: var(--text); border-radius: 2px; }
+.nav-toggle {
+  display: none; flex-direction: column; gap: 4px; cursor: pointer;
+  background: none; border: none; padding: 10px 6px;
+}
+.nav-toggle span {
+  width: 18px; height: 2px; background: var(--text); border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1), opacity 0.2s ease;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 /* ===== hero ===== */
 .hero {
@@ -173,6 +192,8 @@ p { margin: 0; color: var(--text-dim); }
 .card-1 { top: 8%; left: 8%; animation-delay: 0s; }
 .card-2 { top: 42%; right: 4%; animation-delay: 1.2s; }
 .card-3 { bottom: 6%; left: 22%; animation-delay: 2.4s; }
+.card-4 { top: 4%; right: 26%; animation-delay: 0.8s; }
+.card-5 { bottom: 14%; right: 30%; animation-delay: 1.8s; }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
 .tag { font-family: var(--font-en); font-weight: 600; font-size: 0.9rem; }
 .tag-mobile { color: var(--accent-mobile); }
@@ -480,12 +501,31 @@ p { margin: 0; color: var(--text-dim); }
   .hero { grid-template-columns: 1fr; padding-top: 60px; }
   .hero-visual { height: 220px; order: -1; }
   .about-grid, .skills-grid, .cards-grid { grid-template-columns: 1fr; }
-  .nav { position: fixed; inset-inline-end: 16px; top: 64px; background: var(--bg-elev);
+  .nav {
+    position: fixed; inset-inline-end: 16px; top: 64px; background: var(--bg-elev);
     border: 1px solid var(--border); border-radius: var(--radius-md); flex-direction: column;
-    padding: 14px 20px; box-shadow: var(--shadow-lg); display: none; gap: 14px; }
-  .nav.open { display: flex; }
+    padding: 14px 20px; box-shadow: var(--shadow-lg); display: flex; gap: 4px; min-width: 160px;
+    opacity: 0; visibility: hidden; transform: translateY(-10px) scale(0.97);
+    transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.4, 0.2, 0.2, 1), visibility 0.25s;
+    pointer-events: none; z-index: 60;
+  }
+  .nav.open { opacity: 1; visibility: visible; transform: translateY(0) scale(1); pointer-events: auto; }
+  .nav a { display: block; padding: 8px 6px; }
+  .nav a::after { display: none; }
+  .nav a:active, .nav a:hover { color: var(--accent-primary); }
   .nav-toggle { display: flex; }
   .service-card { flex-direction: column; }
+}
+
+@media (max-width: 600px) {
+  .hero-visual { height: 190px; }
+  .orbit-card { padding: 10px 14px; }
+  .orbit-card .tag { font-size: 0.75rem; }
+  /* keep only the 3 core tags on small screens to avoid a crowded, overflowing cluster */
+  .card-4, .card-5 { display: none; }
+  .card-1 { top: 6%; left: 4%; }
+  .card-2 { top: 42%; right: 2%; }
+  .card-3 { bottom: 8%; left: 20%; }
 }
 
 @media (max-width: 480px) {

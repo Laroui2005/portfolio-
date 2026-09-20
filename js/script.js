@@ -29,7 +29,7 @@ function applyTheme(theme) {
   }
 }
 
-applyTheme(getStoredTheme());
+applyTheme(getStoredTheme() || 'dark');
 
 themeToggle.addEventListener('click', () => {
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -42,10 +42,25 @@ themeToggle.addEventListener('click', () => {
 /* ===== Mobile nav toggle ===== */
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
-navToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
+
+function setNavOpen(open) {
+  mainNav.classList.toggle('open', open);
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+}
+
+navToggle.addEventListener('click', () => setNavOpen(!mainNav.classList.contains('open')));
 mainNav.querySelectorAll('a').forEach((link) =>
-  link.addEventListener('click', () => mainNav.classList.remove('open'))
+  link.addEventListener('click', () => setNavOpen(false))
 );
+document.addEventListener('click', (e) => {
+  if (mainNav.classList.contains('open') && !mainNav.contains(e.target) && !navToggle.contains(e.target)) {
+    setNavOpen(false);
+  }
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && mainNav.classList.contains('open')) setNavOpen(false);
+});
 
 /* ===== Projects tabs ===== */
 const tabButtons = document.querySelectorAll('.tab-btn');
